@@ -1,0 +1,1720 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f1e6">
+<title>Para mi cielito ♡</title>
+
+
+
+<style>
+:root {
+ --crema: #FFF8ED;
+--papel: #FFFFFF;
+--verde: #D99AA3;
+--salvia: #E8BFC3;
+--marron: #795548;
+--tinta: #49352C;
+--rosa: #E8BFC3;
+
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--rosa);
+  outline-offset: 4px;
+}
+
+.topbar {
+  background: var(--verde);
+  color: white;
+  text-align: center;
+  padding: 13px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+.hero {
+  min-height: 88vh;
+  padding: 55px 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 10% 15%, #e0e8d6, transparent 42%),
+    radial-gradient(ellipse at 90% 85%, #e8d8c7, transparent 40%),
+    var(--crema);
+}
+
+.hero::before, .hero::after {
+  content: "✿";
+  position: absolute;
+  color: var(--verde);
+  opacity: .25;
+  font-size: 90px;
+}
+
+.hero::before { top: 8%; left: 5%; transform: rotate(-20deg); }
+.hero::after { bottom: 7%; right: 5%; transform: rotate(25deg); }
+
+.hero-content {
+  max-width: 580px;
+  position: relative;
+  z-index: 1;
+  animation: aparecer 1s ease;
+}
+
+.eyebrow, .etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font: 11px Arial, sans-serif;
+  color: var(--verde);
+}
+
+h1 {
+  font-size: clamp(43px, 10vw, 78px);
+  line-height: 1.08;
+  font-weight: normal;
+  margin: 25px 0;
+}
+
+h1 span, .cursiva {
+  color: var(--verde);
+  font-style: italic;
+}
+
+p { line-height: 1.9; }
+
+.hero-text {
+  max-width: 400px;
+  margin: 0 auto 25px;
+}
+
+.boton {
+  border: none;
+  border-radius: 40px;
+  padding: 14px 24px;
+  background: var(--verde);
+  color: white;
+  transition: .2s;
+  box-shadow: 0 6px 16px #586b501b;
+}
+
+.boton:hover {
+  background: var(--marron);
+  transform: translateY(-2px);
+}
+
+.nota {
+  font-size: 12px;
+  color: #897969;
+  margin-top: 16px;
+}
+
+section { padding: 75px 20px; }
+
+.contenido {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(31px, 7vw, 46px);
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.descripcion {
+  max-width: 520px;
+  margin: 0 auto 30px;
+}
+
+.carta-seccion { background: #e8e7d9; }
+
+.sobre-area {
+  max-width: 540px;
+  margin: 35px auto 0;
+}
+
+.sobre {
+  position: relative;
+  background: #d9c5a8;
+  padding: 28px 18px;
+  min-height: 180px;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px #493a3015;
+  display: grid;
+  place-items: center;
+}
+
+.sobre-solapa {
+  font-size: 62px;
+  margin: 4px;
+}
+
+.sobre button { margin: 8px; }
+
+.carta {
+  display: none;
+  background: var(--papel);
+  text-align: left;
+  padding: clamp(23px, 6vw, 42px);
+  margin-top: 20px;
+  border: 1px solid #dfd1bd;
+  line-height: 2;
+  box-shadow: 0 8px 25px #493a3010;
+  animation: aparecer .6s ease;
+}
+
+.carta.abierta { display: block; }
+
+.firma {
+  font-style: italic;
+  font-size: 20px;
+  color: var(--verde);
+  margin-top: 25px;
+}
+
+.recuerdos {
+  margin-top: 28px;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.recuerdo {
+  padding: 17px;
+  border-left: 3px solid var(--salvia);
+  background: #f3f0e5;
+  border-radius: 0 10px 10px 0;
+}
+
+.recuerdo strong {
+  display: block;
+  color: var(--verde);
+  margin-bottom: 6px;
+}
+
+.musica-seccion { background: var(--papel); }
+
+.tarjeta {
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 27px 22px;
+  border: 1px solid #ded8c8;
+  border-radius: 20px;
+  background: #fffdf6;
+  box-shadow: 0 10px 25px #493a3009;
+}
+
+.disco {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  background: repeating-radial-gradient(
+    circle, #c5cbb5 0 4px, #dbe0ce 5px 8px
+  );
+}
+
+audio { width: 100%; margin-top: 16px; }
+
+.pastel-seccion { background: #f0e7d9; }
+
+.pastel {
+  font-size: clamp(70px, 18vw, 105px);
+  margin: 15px 0;
+  animation: flotar 2.5s ease-in-out infinite;
+}
+
+.mensaje-deseo {
+  min-height: 55px;
+  margin-top: 20px;
+  line-height: 1.9;
+}
+
+.flores-seccion { background: #e5e9dc; }
+
+.flores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.boton-flor {
+  border: 1px solid #c6cdbb;
+  border-radius: 30px;
+  padding: 12px 16px;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.boton-flor:hover { background: #dce5d3; }
+
+.ramo {
+  min-height: 110px;
+  font-size: 36px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.lazo { font-size: 33px; }
+
+.juego-seccion { background: #f7f1e6; }
+
+.juego {
+  max-width: 580px;
+  margin: 30px auto;
+  padding: 22px 15px;
+  background: #e7eadf;
+  border-radius: 22px;
+}
+
+.instrucciones { font-size: 14px; }
+
+.escenario {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border: 2px solid #c8d0bd;
+  border-radius: 16px;
+  background: linear-gradient(#f6f1e5, #dce5d4);
+  margin: 20px 0;
+  touch-action: pan-y;
+}
+
+.personaje {
+  position: absolute;
+  bottom: 9px;
+  width: 90px;
+  text-align: center;
+  transition: left .08s linear;
+}
+
+.personaje .cara { font-size: 37px; }
+
+.personaje .cuerpo {
+  width: 48px;
+  height: 57px;
+  border-radius: 17px 17px 7px 7px;
+  margin: 0 auto;
+}
+
+.negro { background: #34332f; }
+.blanco { background: #fffdf6; border: 2px solid #c8bfb0; }
+
+.personaje .nombre {
+  font: 11px Arial, sans-serif;
+  margin-top: 4px;
+  color: var(--tinta);
+}
+
+#lanzador { left: 5px; }
+#atrapador { left: calc(50% - 45px); }
+
+.corazon-caido {
+  position: absolute;
+  top: 0;
+  font-size: 25px;
+  will-change: transform;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin: 15px 0;
+}
+
+.controles button {
+  border: 1px solid #c4cdb9;
+  border-radius: 25px;
+  background: var(--papel);
+  color: var(--tinta);
+  padding: 12px 17px;
+}
+
+.estado {
+  font-size: 14px;
+  line-height: 1.8;
+  min-height: 28px;
+}
+
+.regalo-seccion {
+  background: #e8e7d9;
+}
+
+.caja-regalo {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 32px 20px;
+  background: var(--papel);
+  border: 1px solid #d9d2c1;
+  border-radius: 20px;
+}
+
+.regalo-icono {
+  font-size: 80px;
+  margin: 12px 0;
+  animation: flotar 2s ease-in-out infinite;
+}
+
+.mensaje-final {
+  line-height: 2;
+  margin-top: 22px;
+}
+
+.oculto { display: none; }
+
+footer {
+  padding: 35px 18px;
+  text-align: center;
+  background: var(--verde);
+  color: white;
+  line-height: 2;
+}
+
+footer .corazon { color: #f2d7cc; font-size: 25px; }
+
+#confeti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.confeti-pieza {
+  position: absolute;
+  top: -25px;
+  animation: caer 3.4s linear forwards;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes caer {
+  to { transform: translateY(110vh) rotate(600deg); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  section { padding: 58px 17px; }
+  .hero { min-height: 80vh; }
+  .topbar { letter-spacing: 1.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.imagen-pastel {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+.sobre-personalizado {
+  position: relative;
+  width: 220px;
+  max-width: 90%;
+margin: 45px auto 25px calc(50% - 230px);}
+
+.sobre-personalizado .imagen-sobre {
+  display: block;
+  width: 200%;
+  height: auto;
+}
+
+.boton-sobre {
+  position: absolute;
+  top: 85%;   /* Más pequeño = arriba */
+  left: 65%; /* Más grande = derecha */
+  z-index: 2;   
+  white-space: nowrap;
+  background: #795548;
+  color: #FFFFFF;
+}
+</style>
+</head>
+
+<body>
+<div id="confeti" aria-hidden="true"></div>
+
+<div class="topbar">HECHO CON MUCHO AMOR, SOLO PARA TI ♡</div>
+
+<!-- PORTADA -->
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <p class="eyebrow">30 de octubre de 2026 · Tu día especial</p>
+
+    <h1>Feliz cumpleaños,<br><span>mi cielito</span> ♡</h1>
+
+    <p class="hero-text">
+      Hice un pequeño lugar solo para ti,
+      mi amor, lleno de detalles y sorpresitas
+      hechas con todo mi cariño.
+    </p>
+
+    <p>Espero que te guste, mi cosito bonito.</p>
+
+    <button class="boton"
+      onclick="irA('carta-seccion')">
+      Abrir mi regalito ♡
+    </button>
+
+    <p class="nota">Tómate tu tiempo, no hay prisa.</p>
+  </div>
+</header>
+
+<!-- CARTA -->
+<section class="book-scene carta-seccion" id="carta-seccion">  <div class="contenido">
+    <p class="etiqueta">Unas palabritas para ti</p>
+
+<div class="sobre-personalizado">
+  <img
+    src="envelop.png"
+    alt="Un sobre para mi niño bonito"
+    class="imagen-sobre"
+  >
+
+  <button class="boton boton-sobre" id="abrirCarta"
+    onclick="alternarCarta()">
+    Abrir mi carta ♡
+  </button>
+</div>
+
+<h2></h2>
+<p class="descripcion"></p>
+
+      <article class="carta" id="miCarta">
+        <p>Para mi amor, Cris:</p>
+
+        <p>
+          Feliz cumpleaños mi cielito!! 
+
+          Ya se que las paginas web que te hago son muy repetitivas pero aun asi queria hacerte otra para tu cumple, porque me gusta hacerte cosas bonitas.. (segun yo son bonitas) 
+           
+        </p>
+
+        <p>
+          Me alegra mucho tenerte en mi vida mi amorcito <3.
+          Finalmente llego tu dia y no sabes lo feliz que
+          me hace poder celebrarlo contigo por primera vez, aunque
+          me gustaria muchisimo poder estar a tu lado y darte
+          los abrazos y besitos que te mereces..
+        </p>
+
+        <p>
+        Quiero que sepas que eres muy especial para mi,
+        y me siento muy afortunado de tenerte en mi vida. 
+        Eres una persona maravillosa y haces que mis dias
+        sean cada vez mejor <3
+    
+        </p>
+
+        <p>
+         A veces me pongo a pensar en todo este tiempo
+         que llevamos juntos y me parece tan bonito que hayamos llegado 
+         tan lejos y saber que aun nos quedan muchisimas cosas
+         por vivir juntos lo hace mas emocionante.
+        </p>
+
+        <p>
+          Te amo muchisimo mi cosito bello, espero la pases muy bien 
+          hoy y disfrutes tu dia al maximo, porque te lo mereces.
+        </p>
+
+        <p>Feliz cumpleaños, mi amor. Te mando un besote enorme, muaaaaak.
+
+        <p class="firma">Con mucho amor,<br>tu niño ♡</p>
+
+      
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+      <audio id="reproductor" loop preload="auto">
+  <source src="Love Wave to Earth.mp3" type="audio/mpeg">
+  Tu navegador no puede reproducir este audio.
+</audio>
+
+      <p class="nota">
+              </p>
+    </div>
+  </div>
+</section>
+
+<!-- PASTEL -->
+<section class="pastel-seccion" id="pastel">
+  <div class="contenido">
+    <p class="etiqueta">Pide un deseo</p>
+    <h2>Un pastel solo para ti.</h2>
+    <p class="descripcion">
+      Cierra los ojos un momentito, mi niño.
+      Piensa en un deseo y pulsa el botón.
+    </p>
+
+    <div class="tarjeta">
+      <img
+  src="pompom-removebg-preview.png"
+  alt="Pastel de cumpleaños"
+  class="imagen-pastel"
+  id="emojiPastel"
+>
+      <button class="boton" id="botonDeseo" onclick="pedirDeseo()">
+        ¡Pedir mi deseo! 
+      </button>
+      
+      <p class="mensaje-deseo" id="mensajeDeseo" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- FLORERÍA -->
+<section class="book-scene floristeria" id="floristeria"
+  <div class="floreria-encabezado">
+    <p class="floreria-etiqueta">HECHO CON AMOR</p>
+    <h2>La pequeña florería ♡</h2>
+    <p>Elige las flores que quieras para su ramo.</p>
+  </div>
+
+<div class="catalogo-flores">
+  <button class="flor-opcion" onclick="agregarFlor('flower.1.png', 'Flor 1')">
+    <img src="flower.1.png" alt="Flor 1">
+    <span>Flor 1</span>
+    <small>＋ Añadir</small>
+  </button>
+
+  <button class="flor-opcion" onclick="agregarFlor('flower.2.png', 'Flor 2')">
+    <img src="flower.2.png" alt="Flor 2">
+    <span>Flor 2</span>
+    <small>＋ Añadir</small>
+  </button>
+
+  <button class="flor-opcion" onclick="agregarFlor('flower.3.png', 'Flor 3')">
+    <img src="flower.3.png" alt="Flor 3">
+    <span>Flor 3</span>
+    <small>＋ Añadir</small>
+  </button>
+
+  <button class="flor-opcion" onclick="agregarFlor('flower.4.png', 'Flor 4')">
+    <img src="flower.4.png" alt="Flor 4">
+    <span>Flor 4</span>
+    <small>＋ Añadir</small>
+  </button>
+</div>
+
+   <!-- DERECHA: RAMO EN CONSTRUCCIÓN -->
+<div class="zona-ramo">
+  <h3>Ponle las flores que te gusten mas</h3>
+  <p class="ayuda-flores">Llenalo de flores para que no se vea pelon.</p>
+
+  <div class="ramo-escenario">
+
+    <!-- ENVOLTORIO DETRÁS DE LAS FLORES -->
+    <img
+      src="envoltorio.png"
+      alt=""
+      class="ramo-envoltorio"
+    >
+
+    <!-- LAS FLORES SE AÑADEN AQUÍ -->
+    <div class="ramo-flores" id="ramoFlores"></div>
+
+  </div>
+
+  <p class="contador-ramo" id="contadorRamo">
+    Tu ramo está esperando sus primeras flores ♡
+  </p>
+
+<button class="boton-limpiar-ramo" onclick="limpiarRamo()">
+  Empezar de nuevo
+</button>
+</div>
+</section>
+
+
+<!-- JUEGO -->
+<section class="juego-seccion" id="juego">
+  <div class="contenido">
+    <p class="etiqueta">mini jueguito y asi</p>
+    <h2>Atrapa los corazoncitos</h2>
+    <p class="descripcion">
+      Yo te lanzo corazoncitos y tú tienes que
+      atraparlos. ¡No dejes que se te escapen tres!
+    </p>
+
+    <div class="juego">
+      <p class="instrucciones">
+        Te estoy vigilando y si se te caen vas a ver.
+      </p>
+
+      <div class="escenario" id="escenario">
+
+        <!-- TÚ: LANZAS LOS CORAZONES DESDE ARRIBA -->
+        <div class="personaje lanzador-stickman" id="lanzador">
+          <div class="pelo pelo-oscuro"></div>
+          <div class="cabeza-stickman">
+            <span class="ojos">- -</span>
+            <span class="mejillas"></span>
+          </div>
+          <div class="cuerpo-stickman negro"></div>
+          <div class="brazo brazo-lanzador"></div>
+          <div class="piernas-stickman"></div>
+          <div class="nombre">yo pro</div>
+        </div>
+
+        <!-- CORAZONES QUE CAEN -->
+        <div id="zonaCorazones"></div>
+
+        <!-- CRIS: ATRAPA LOS CORAZONES ABAJO -->
+        <div class="personaje atrapador-stickman" id="atrapador">
+          <div class="pelo pelo-oscuro pelo-cris"></div>
+          <div class="cabeza-stickman">
+            <span class="ojos">• •</span>
+            <span class="mejillas"></span>
+          </div>
+          <div class="cuerpo-stickman blanco"></div>
+          <div class="brazo brazo-atrapador"></div>
+          <div class="caja-corazones">♡</div>
+          <div class="piernas-stickman"></div>
+          <div class="nombre">tilin ♡</div>
+        </div>
+
+      </div>
+
+      <p class="estado" id="estadoJuego" aria-live="polite">
+        ¿Listo, mi amor? Pulsa comenzar.
+      </p>
+
+      <div class="controles">
+        <button onclick="moverCris(-1)" aria-label="Mover a Cris a la izquierda">
+          ← Izquierda
+        </button>
+        <button onclick="moverCris(1)" aria-label="Mover a Cris a la derecha">
+          Derecha →
+        </button>
+      </div>
+
+      <button class="boton" id="botonJuego" onclick="iniciarJuego()">
+        ¡Comenzar juego! ♡
+      </button>
+
+      <p class="nota">
+        También puedes usar las flechas del teclado.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- REGALO FINAL -->
+<section class="regalo-seccion" id="regalo">
+  <div class="contenido">
+    <p class="etiqueta">Llegaste hasta aquí</p>
+    <h2>Un último regalito.</h2>
+    <p class="descripcion">
+      Mi cielito, todavía tengo algo que decirte.
+      Este último regalo es solo para ti.
+    </p>
+
+    <div class="caja-regalo">
+      <div class="regalo-icono" id="emojiRegalo" aria-hidden="true">🎁</div>
+
+      <button class="boton" id="botonRegalo" onclick="abrirRegalo()">
+        Abrir mi último regalo ♡
+      </button>
+
+      <div class="mensaje-final oculto" id="mensajeFinal" aria-live="polite">
+        <p>
+          Feliz cumpleaños, mi cielito. ♡
+        </p>
+        <p>
+          Aqui se supone que tenia que poner el video mio pero no pude hacerlo :(
+            por eso amm.. no se, pideme lo que quieras y lo hare.
+          )
+        </p>
+        <p>
+         Que la pases bien hoy mi bebe grandote <33
+        </p>
+        <p class="firma">Te quiero mucho, mi cosito. ♡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="corazon">♡</div>
+  Hecho con amor para Cris.<br>
+  30 de octubre de 2026<br>
+  <small>Un pequeño regalo de tu niño.</small>
+</footer>
+
+<script>
+function irA(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+// CARTA
+function alternarCarta() {
+  const carta = document.getElementById("miCarta");
+  const boton = document.getElementById("abrirCarta");
+  const abierta = carta.classList.toggle("abierta");
+
+  boton.textContent = abierta ? "Cerrar el sobre ♡" : "Abrir el sobre ♡";
+
+  if (abierta) {
+    setTimeout(() => carta.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    }), 100);
+  }
+}
+
+// MUSICA
+const reproductor = document.getElementById("reproductor");
+const estadoMusica = document.getElementById("estadoMusica");
+
+reproductor.addEventListener("play", () => {
+  estadoMusica.textContent = "Sonando para ti, mi cielito. ♡";
+});
+
+reproductor.addEventListener("error", () => {
+  estadoMusica.textContent =
+    "Añade tu archivo de música llamado cancion.mp3 a la carpeta del website.";
+});
+
+// CONFETI
+function lanzarConfeti() {
+  const contenedor = document.getElementById("confeti");
+  const simbolos = ["♡", "✿", "✨", "·"];
+  const colores = ["#586b50", "#c58f86", "#b59b64", "#9cae8e"];
+
+  for (let i = 0; i < 45; i++) {
+    const pieza = document.createElement("span");
+    pieza.className = "confeti-pieza";
+    pieza.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
+    pieza.style.left = Math.random() * 100 + "%";
+    pieza.style.animationDelay = Math.random() * 1.2 + "s";
+    pieza.style.fontSize = (12 + Math.random() * 15) + "px";
+    pieza.style.color = colores[Math.floor(Math.random() * colores.length)];
+    contenedor.appendChild(pieza);
+    setTimeout(() => pieza.remove(), 5000);
+  }
+}
+
+// PASTEL
+let deseoPedido = false;
+
+function pedirDeseo() {
+  if (deseoPedido) return;
+
+  deseoPedido = true;
+  document.getElementById("emojiPastel").textContent = "🎂✨";
+  document.getElementById("botonDeseo").textContent = "¡Deseo pedido! ♡";
+  document.getElementById("mensajeDeseo").textContent =
+    "Ojalá este nuevo año te traiga muchas cosas bonitas, mi niño. ♡";
+  lanzarConfeti();
+}
+
+// FLORISTERIA
+let floresElegidas = [];
+
+const posicionesRamo = [
+  { x: 50, y: 32, giro: 0 },
+  { x: 39, y: 36, giro: -12 },
+  { x: 61, y: 36, giro: 12 },
+  { x: 31, y: 43, giro: -18 },
+  { x: 69, y: 43, giro: 18 },
+  { x: 42, y: 45, giro: -7 },
+  { x: 58, y: 45, giro: 7 },
+  { x: 36, y: 51, giro: -12 },
+  { x: 64, y: 51, giro: 12 },
+  { x: 46, y: 53, giro: -4 },
+  { x: 54, y: 53, giro: 4 },
+  { x: 50, y: 43, giro: 0 },
+  { x: 44, y: 34, giro: -8 },
+  { x: 56, y: 34, giro: 8 },
+  { x: 50, y: 49, giro: 0 }
+];
+
+function agregarFlor(imagen, nombre) {
+  if (floresElegidas.length >= posicionesRamo.length) {
+    document.getElementById("contadorRamo").textContent =
+      "¡Tu ramo está lleno de flores! ♡";
+    return;
+  }
+
+  floresElegidas.push({ imagen, nombre });
+  dibujarRamo();
+}
+
+function dibujarRamo() {
+  const contenedor = document.getElementById("ramoFlores");
+  const contador = document.getElementById("contadorRamo");
+
+  if (!contenedor || !contador) return;
+
+  contenedor.innerHTML = "";
+
+  floresElegidas.forEach((flor, indice) => {
+    const posicion = posicionesRamo[indice];
+    const img = document.createElement("img");
+
+    img.src = flor.imagen;
+    img.alt = flor.nombre;
+    img.className = "flor-en-ramo";
+    img.style.left = posicion.x + "%";
+    img.style.top = posicion.y + "%";
+    img.style.transform =
+      `translate(-50%, -50%) rotate(${posicion.giro}deg)`;
+
+    contenedor.appendChild(img);
+  });
+
+  contador.textContent = floresElegidas.length === 0
+    ? "Tu ramo está esperando sus primeras flores ♡"
+    : `Tu ramo tiene ${floresElegidas.length} flores ♡`;
+}
+
+function limpiarRamo() {
+  floresElegidas = [];
+  dibujarRamo();
+}
+
+window.agregarFlor = agregarFlor;
+window.limpiarRamo = limpiarRamo;
+// JUEGO DE CORAZONES
+const escenario = document.getElementById("escenario");
+const lanzador = document.getElementById("lanzador");
+const atrapador = document.getElementById("atrapador");
+const estadoJuego = document.getElementById("estadoJuego");
+const botonJuego = document.getElementById("botonJuego");
+
+let juegoActivo = false;
+let corazones = [];
+let puntos = 0;
+let fallados = 0;
+let posicionCris = 0;
+let ultimoCorazon = 0;
+let ultimoTiempo = 0;
+let frameJuego = 0;
+
+
+function actualizarPosiciones() {
+  const ancho = escenario.clientWidth;
+  const personajeAncho = atrapador.offsetWidth || 100;
+  const maximo = Math.max(0, ancho - personajeAncho);
+
+  lanzador.style.left = "50%";
+  lanzador.style.transform = "translateX(-50%)";
+
+  const izquierda = Math.max(0, Math.min(maximo, posicionCris));
+  atrapador.style.left = izquierda + "px";
+  atrapador.style.transform = "none";
+}
+
+
+function moverCris(direccion) {
+  if (!juegoActivo) return;
+
+  posicionCris += direccion * 28;
+  actualizarPosiciones();
+}
+
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "ArrowLeft") {
+    evento.preventDefault();
+    moverCris(-1);
+  }
+
+  if (evento.key === "ArrowRight") {
+    evento.preventDefault();
+    moverCris(1);
+  }
+});
+
+window.addEventListener("resize", actualizarPosiciones);
+actualizarPosiciones();
+
+function crearCorazon() {
+  const corazon = document.createElement("span");
+ corazon.className = "corazon-cayendo";
+  corazon.textContent = "💗";
+
+  const maxX = Math.max(0, escenario.clientWidth - 30);
+  const x = 10 + Math.random() * Math.max(1, maxX - 10);
+
+  corazon.style.left = x + "px";
+  escenario.appendChild(corazon);
+
+  corazones.push({
+    elemento: corazon,
+    x: x,
+    y: -28,
+    velocidad: 1.5 + Math.random() * 1.1
+  });
+}
+
+function terminarJuego(ganaste) {
+  juegoActivo = false;
+  cancelAnimationFrame(frameJuego);
+
+  corazones.forEach(c => c.elemento.remove());
+  corazones = [];
+
+  if (ganaste) {
+    estadoJuego.textContent =
+      "¡Lo lograste, mi cielito! Atrapaste 10 corazones. ";
+    lanzarConfeti();
+  } else {
+    estadoJuego.textContent =
+      "maldito por que no los atrapaste no me amas acaso. ";
+  }
+
+  botonJuego.textContent = "Jugar otra vez ";
+}
+
+function bucleJuego(tiempo) {
+  if (!juegoActivo) return;
+
+  if (!ultimoTiempo) ultimoTiempo = tiempo;
+  const delta = Math.min(tiempo - ultimoTiempo, 40);
+  ultimoTiempo = tiempo;
+
+  if (tiempo - ultimoCorazon > 850) {
+    crearCorazon();
+    ultimoCorazon = tiempo;
+  }
+
+  const rectCris = atrapador.getBoundingClientRect();
+  const rectEscenario = escenario.getBoundingClientRect();
+  const izquierdaCris = rectCris.left - rectEscenario.left;
+  const derechaCris = izquierdaCris + atrapador.offsetWidth;
+
+  for (let i = corazones.length - 1; i >= 0; i--) {
+    const c = corazones[i];
+    c.y += c.velocidad * delta / 16;
+    c.elemento.style.transform = "translateY(" + c.y + "px)";
+
+    
+const altoCorazon = c.y + 25;
+const zonaAtrapado = atrapador.offsetTop - 25;
+const enAltura = altoCorazon >= zonaAtrapado;
+
+
+    if (enAltura &&
+        c.x + 24 >= izquierdaCris &&
+        c.x <= derechaCris) {
+      c.elemento.remove();
+      corazones.splice(i, 1);
+      puntos++;
+
+      estadoJuego.textContent =
+        "Corazones atrapados: " + puntos + " de 10 · ¡Vamos, amor mete gol! ";
+
+      if (puntos >= 10) {
+        terminarJuego(true);
+        return;
+      }
+    } else if (c.y > escenario.clientHeight - 25) {
+      c.elemento.remove();
+      corazones.splice(i, 1);
+      fallados++;
+
+      estadoJuego.textContent =
+        "Atrapados: " + puntos + " · Se escaparon: " + fallados + " de 3";
+
+      if (fallados >= 3) {
+        terminarJuego(false);
+        return;
+      }
+    }
+  }
+
+  frameJuego = requestAnimationFrame(bucleJuego);
+}
+
+function iniciarJuego() {
+  cancelAnimationFrame(frameJuego);
+  corazones.forEach(c => c.elemento.remove());
+  corazones = [];
+
+  puntos = 0;
+  fallados = 0;
+  posicionCris = Math.max(0, escenario.clientWidth / 2 - 45);
+  ultimoCorazon = 0;
+  ultimoTiempo = 0;
+  juegoActivo = true;
+
+  actualizarPosiciones();
+  estadoJuego.textContent = "¡Atrapa 10 corazoncitos, mi cielito! ♡";
+  botonJuego.textContent = "Reiniciar juego";
+  frameJuego = requestAnimationFrame(bucleJuego);
+}
+
+// REGALO FINAL
+let regaloAbierto = false;
+
+function abrirRegalo() {
+  if (regaloAbierto) return;
+
+  regaloAbierto = true;
+  document.getElementById("emojiRegalo").textContent = "💗";
+  document.getElementById("mensajeFinal").classList.remove("oculto");
+  document.getElementById("botonRegalo").textContent = "te amo mi cosaron ♡";
+  lanzarConfeti();
+
+  document.getElementById("mensajeFinal").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+</script>
+
+<style>
+  .book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 28px auto;
+    max-width: 600px;
+  }
+
+  .book-nav button {
+    border: none;
+    border-radius: 24px;
+    padding: 12px 20px;
+    background: #795548;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+  }
+
+.book-nav button:hover:not(:disabled) {
+  background: #E8BFC3;
+  color: #594238;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+  .book-nav button:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  #book-progress {
+    color: #806d59;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .book-scene {
+    animation: bookFadeIn 0.55s ease both;
+  }
+
+  .book-scene.fade-out {
+    animation: bookFadeOut 0.3s ease both;
+  }
+
+  @keyframes bookFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes bookFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+/* ===== FLORERÍA ROMÁNTICA ===== */
+
+.floristeria {
+  background: #FFF8ED;
+  color: #49352C;
+  padding: 30px 18px;
+  border-radius: 22px;
+}
+
+.floreria-encabezado {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.floreria-encabezado h2 {
+  color: #795548;
+  margin: 8px 0;
+}
+
+.floreria-encabezado p {
+  line-height: 1.6;
+}
+
+.floreria-etiqueta {
+  color: #B77D83;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.floreria-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  max-width: 950px;
+  margin: auto;
+  align-items: start;
+}
+
+.tienda-flores,
+.zona-ramo {
+  background: #FFFFFF;
+  border: 1px solid #E8BFC3;
+  border-radius: 18px;
+  padding: 18px;
+  min-width: 0;
+}
+
+.tienda-flores h3,
+.zona-ramo h3 {
+  color: #795548;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.ayuda-flores {
+  color: #806D62;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.catalogo-flores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.flor-opcion {
+  background: #FFF8ED;
+  border: 1px solid #F0D9D8;
+  border-radius: 13px;
+  padding: 10px 6px;
+  cursor: pointer;
+  color: #594238;
+  font: inherit;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.flor-opcion:hover {
+  background: #FCEBED;
+  transform: translateY(-3px);
+}
+
+.flor-opcion img {
+  width: 100%;
+  height: 95px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.flor-opcion span,
+.flor-opcion small {
+  display: block;
+  text-align: center;
+}
+
+.flor-opcion span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.flor-opcion small {
+  color: #96636A;
+  margin-top: 6px;
+}
+
+/* Escenario donde se construye el ramo */
+
+.ramo-escenario {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  height: 320px;
+  margin: 15px auto 0;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at center,
+    #FFF8ED 0%,
+    #FFFFFF 72%
+  );
+  border-radius: 18px;
+}
+
+/* Imagen del papel envolviendo el ramo */
+
+.ramo-envoltorio {
+  position: absolute;
+  z-index: 1;
+  width: 72%;
+  height: 58%;
+  left: 50%;
+  top: 73%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Capa donde se colocan las flores */
+
+.ramo-flores {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.flor-en-ramo {
+  position: absolute;
+  width: 25%;
+  height: 28%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  animation: aparecerFlor 0.35s ease both;
+}
+
+@keyframes aparecerFlor {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.contador-ramo {
+  color: #795548;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.boton-limpiar-ramo {
+  display: block;
+  margin: 12px auto 0;
+  padding: 10px 16px;
+  border: 1px solid #D99AA3;
+  border-radius: 20px;
+  background: #F2D5D7;
+  color: #594238;
+  cursor: pointer;
+  font: inherit;
+}
+
+.boton-limpiar-ramo:hover {
+  background: #E8BFC3;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+  .floreria-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tienda-flores,
+  .zona-ramo {
+    padding: 13px;
+  }
+
+  .catalogo-flores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ramo-escenario {
+    max-width: 300px;
+  }
+}
+
+/* ===== STICKMANS DEL MINIJUEGO ===== */
+
+.escenario {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  border: 2px dashed #d99aa3;
+  border-radius: 22px;
+  background: #fff6ef;
+}
+
+/* Posición de los dos personajes */
+.lanzador-stickman,
+.atrapador-stickman {
+  position: absolute;
+  width: 100px;
+  height: 145px;
+  text-align: center;
+}
+
+/* Tú arriba */
+.lanzador-stickman {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Cris abajo */
+.atrapador-stickman {
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Cabeza */
+.cabeza-stickman {
+  position: absolute;
+  top: 20px;
+  left: 29px;
+  width: 42px;
+  height: 42px;
+  border: 3px solid #49352c;
+  border-radius: 50%;
+  background: #ffeadc;
+  z-index: 2;
+}
+
+.ojos {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+  width: 25px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #49352c;
+}
+
+.mejillas {
+  position: absolute;
+  bottom: 3px;
+  left: 13px;
+  color: #d8798d;
+  font-size: 12px;
+}
+
+/* Pelo oscuro */
+.pelo {
+  position: absolute;
+  top: 12px;
+  left: 25px;
+  width: 50px;
+  height: 25px;
+  background: #49352c;
+  border-radius: 50% 50% 35% 35%;
+  z-index: 3;
+}
+
+.pelo::before,
+.pelo::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: #49352c;
+  border-radius: 50%;
+}
+
+.pelo::before {
+  left: -3px;
+}
+
+.pelo::after {
+  right: -3px;
+}
+
+.pelo-cris {
+  width: 46px;
+  left: 27px;
+  height: 22px;
+}
+
+/* Cuerpo y brazos de líneas */
+.cuerpo-stickman {
+  position: absolute;
+  top: 64px;
+  left: 48px;
+  width: 4px;
+  height: 42px;
+  background: #49352c;
+  border-radius: 4px;
+}
+
+.brazo {
+  position: absolute;
+  top: 72px;
+  left: 30px;
+  width: 43px;
+  height: 4px;
+  background: #49352c;
+  border-radius: 4px;
+  transform-origin: right center;
+}
+
+.brazo-lanzador {
+  transform: rotate(-25deg);
+}
+
+.brazo-atrapador {
+  transform: rotate(25deg);
+}
+
+.piernas-stickman {
+  position: absolute;
+  top: 99px;
+  left: 48px;
+  width: 4px;
+  height: 34px;
+  background: #49352c;
+}
+
+.piernas-stickman::before,
+.piernas-stickman::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -2px;
+  width: 4px;
+  height: 25px;
+  background: #49352c;
+  border-radius: 4px;
+  transform-origin: top center;
+}
+
+.piernas-stickman::before {
+  transform: rotate(35deg);
+}
+
+.piernas-stickman::after {
+  transform: rotate(-35deg);
+}
+
+/* Ropa: negro para ti, blanco para Cris */
+.cuerpo-stickman.negro {
+  background: #49352c;
+}
+
+.cuerpo-stickman.blanco {
+  background: #fffdf9;
+  border: 1px solid #49352c;
+  box-sizing: border-box;
+}
+
+/* Cajita para recoger corazones */
+.caja-corazones {
+  position: absolute;
+  top: 73px;
+  left: 64px;
+  width: 32px;
+  height: 25px;
+  border: 3px solid #9e5966;
+  border-radius: 4px;
+  background: #ffe1e4;
+  color: #c75d79;
+  font-size: 23px;
+  line-height: 25px;
+  z-index: 4;
+}
+
+.nombre {
+  position: absolute;
+  top: 137px;
+  width: 100px;
+  color: #70434a;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Espacio donde aparecerán los corazones */
+#zonaCorazones {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.corazon-cayendo {
+  position: absolute;
+  color: #df7891;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 480px) {
+  .escenario {
+    min-height: 440px;
+  }
+}
+
+</style>
+
+<script>
+   const posicionesRamo = [
+    { x: 50, y: 28, giro: 0 },
+    { x: 32, y: 35, giro: -12 },
+    { x: 68, y: 35, giro: 12 }
+  ];
+
+  let floresElegidas = [];
+
+  function agregarFlor(imagen, nombre) {
+    if (floresElegidas.length >= posicionesRamo.length) {
+      alert("¡Tu ramo ya está lleno de flores! ♡");
+      return;
+    }
+
+    floresElegidas.push({ imagen, nombre });
+    dibujarRamo();
+  }
+
+  function dibujarRamo() {
+    const contenedor = document.getElementById("ramoFlores");
+    const contador = document.getElementById("contadorRamo");
+
+    contenedor.innerHTML = "";
+
+    floresElegidas.forEach((flor, indice) => {
+      const posicion = posicionesRamo[indice];
+      const imagen = document.createElement("img");
+
+      imagen.src = flor.imagen;
+      imagen.alt = flor.nombre;
+      imagen.className = "flor-en-ramo";
+
+      imagen.style.left = posicion.x + "%";
+      imagen.style.top = posicion.y + "%";
+      imagen.style.transform =
+        `translate(-50%, -50%) rotate(${posicion.giro}deg)`;
+
+      contenedor.appendChild(imagen);
+    });
+
+    if (floresElegidas.length === 0) {
+      contador.textContent =
+        "Tu ramo está esperando sus primeras flores ♡";
+    } else {
+      contador.textContent =
+        `Tu ramo tiene ${floresElegidas.length} flor(es). ¡Sigue creando! ♡`;
+    }
+  }
+
+ function limpiarRamo() {
+  floresElegidas.length = 0;
+  dibujarRamo();
+} 
+ // La navegación se conectará a las escenas en el siguiente paso.
+  let currentScene = 0;
+  let isChangingScene = false;
+
+  function changeScene(direction) {
+    const scenes = [...document.querySelectorAll(".book-scene")];
+    if (!scenes.length || isChangingScene) return;
+
+    const nextScene = currentScene + direction;
+    if (nextScene < 0 || nextScene >= scenes.length) return;
+
+    isChangingScene = true;
+    const current = scenes[currentScene];
+
+    current.classList.add("fade-out");
+
+    setTimeout(() => {
+      current.hidden = true;
+      current.classList.remove("fade-out");
+
+      currentScene = nextScene;
+      scenes[currentScene].hidden = false;
+      scenes[currentScene].style.animation = "none";
+      void scenes[currentScene].offsetWidth;
+      scenes[currentScene].style.animation = "";
+
+      const progress = document.getElementById("book-progress");
+      if (progress) {
+        progress.textContent =
+          `Escena ${currentScene + 1} de ${scenes.length}`;
+      }
+
+      const previous = document.getElementById("book-previous");
+      const next = document.getElementById("book-next");
+      if (previous) previous.disabled = currentScene === 0;
+      if (next) next.disabled = currentScene === scenes.length - 1;
+
+      isChangingScene = false;
+    }, 300);
+  }
+  window.limpiarRamo = limpiarRamo;
+</script>
+<script>
+  const musica = document.getElementById("reproductor");
+
+  function iniciarMusica() {
+    if (!musica) return;
+
+    musica.play().catch(() => {
+      // El navegador puede pedir una interacción primero.
+    });
+  }
+
+  window.addEventListener("load", iniciarMusica);
+
+  document.addEventListener("click", function iniciarAlPrimerClick() {
+    iniciarMusica();
+  }, { once: true });
+
+</script>
+</body>
+</html>
